@@ -1,3 +1,4 @@
+// foo for github
 const fs = require('fs');
 var dns = require('dns');
 var parse = require('parse-domain');
