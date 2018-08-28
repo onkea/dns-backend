@@ -9,7 +9,6 @@ var totalUrl = 100000;
 //var http = require('http');
 //var cheerio = require('cheerio');
 
-
 // maybe I should create a nodejs package that will check various things
 // contains a number, cointains more than 1 number etc like is-alphanumeric
 
@@ -26,7 +25,7 @@ const ObjectId = (m = Math, d = Date, h = 16, s = s => m.floor(s).toString(h)) =
 
 // LineByLine reads through text files by line adding them into an array
 var LineByLineReader = require('line-by-line'),
-    lr = new LineByLineReader('auto.txt');
+    lr = new LineByLineReader('domainlist.txt');
 // -----------// -----------// -----------// -----------// -----------// -----------
 
 // Check to see if there's a number in the domain
@@ -65,21 +64,8 @@ var fullTLD = parsed.domain + '.' + parsed.tld;
     } else  {
 
     domains.push(fullTLD);
-    dns.lookup(fullTLD, function (err, address) 
-    {
     
 
-        if(typeof(address)=='undefined')
-        {
-            console.log(fullTLD + " : " + address + ' too bad :(')
-            nodns++;
-        }
-        else
-        {
-            console.log(fullTLD + " : " + address + 'woohoo!!')
-            hasdns++;
-	}
-    });
     }
 
 }); 
@@ -96,8 +82,8 @@ console.log("There are " + hasdns + " domains with dns and " + nodns + " domains
 //console.log('unique domains in array: ' + uniqueDomains.length);
 
 
-var totalUrl = uniqueDomains.length;
-//console.log(uniqueDomains);
+var totalUrls = uniqueDomains.length;
+console.log(totalUrls);
 // uniqueDomains.reverse();
 
 
