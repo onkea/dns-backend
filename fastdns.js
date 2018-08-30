@@ -9,6 +9,7 @@ var totalUrl = 100000;
 //var http = require('http');
 //var cheerio = require('cheerio');
 
+
 // maybe I should create a nodejs package that will check various things
 // contains a number, cointains more than 1 number etc like is-alphanumeric
 
@@ -24,8 +25,8 @@ const ObjectId = (m = Math, d = Date, h = 16, s = s => m.floor(s).toString(h)) =
     s(d.now() / 1000) + ' '.repeat(h).replace(/./g, () => s(m.random() * h))
 
 // LineByLine reads through text files by line adding them into an array
-var LineByLineReader = require('line-by-line'),
-    lr = new LineByLineReader('domainlist.txt');
+var LineByLineReader = require('line-by-line');
+    lr = new LineByLineReader('auto.txt');
 // -----------// -----------// -----------// -----------// -----------// -----------
 
 // Check to see if there's a number in the domain
